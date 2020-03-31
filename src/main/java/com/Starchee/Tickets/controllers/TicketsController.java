@@ -23,16 +23,11 @@ public class TicketsController {
         return "search";
     }
 
-    @GetMapping("/details/{surname}")
-    public String searchingBySurname(Model model, @PathVariable("surname") String surname) {
+    @GetMapping("/search/details")
+    public String searchingBySurname(Model model, @RequestParam("surname") String surname) {
         Tickets selectedTickets = ticketsService.getTicketsBySurname(surname);
         model.addAttribute("selectedTickets", selectedTickets);
         return "details";
-    }
-
-    @PostMapping("/search")
-    public String searchingBySurname( @RequestParam("surname") String surname) {
-        return "redirect:/details/"+surname;
     }
 
     @GetMapping("")
@@ -41,6 +36,9 @@ public class TicketsController {
         model.addAttribute("tickets", allTickets);
         return "homepage";
     }
+
+
+
 
 
 }

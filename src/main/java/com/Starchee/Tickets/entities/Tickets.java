@@ -3,7 +3,7 @@ package com.Starchee.Tickets.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Tickets")
+@Table(name = "tickets")
 public class Tickets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
