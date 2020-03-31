@@ -1,7 +1,7 @@
 package com.Starchee.Tickets.controllers;
 
 import com.Starchee.Tickets.entities.Owner;
-import com.Starchee.Tickets.services.TicketsService;
+import com.Starchee.Tickets.services.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-public class TicketsController {
-    private TicketsService ticketsService;
+public class OwnerController {
+    private OwnerService ownerService;
 
     @Autowired
-    public void setTicketsService(TicketsService ticketsService){
-        this.ticketsService = ticketsService;
+    public void setOwnerService(OwnerService ownerService){
+        this.ownerService = ownerService;
     }
 
     @GetMapping("/search")
@@ -25,15 +25,15 @@ public class TicketsController {
 
     @GetMapping("/search/details")
     public String searchingBySurname(Model model, @RequestParam("surname") String surname) {
-        Owner selectedOwner = ticketsService.getTicketsBySurname(surname);
-        model.addAttribute("selectedTickets", selectedOwner);
+        Owner selectedOwner = ownerService.getOwnerBySurname(surname);
+        model.addAttribute("selectedOwner", selectedOwner);
         return "details";
     }
 
     @GetMapping("")
     public String homePage(Model model){
-        List<Owner> allTickets = ticketsService.getAllTickets();
-        model.addAttribute("tickets", allTickets);
+        List<Owner> allOwners = ownerService.getAllOwners();
+        model.addAttribute("owners", allOwners);
         return "homepage";
     }
 
