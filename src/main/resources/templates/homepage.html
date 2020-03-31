@@ -14,26 +14,26 @@
 
 <body>
 
-<div class="container">
-    <h1>Tickets is here!</h1>
-    <span th:if="${owner.size() == 0}">Tickets List is empty</span>
-    <table th:if="${owner.size() > 0}" class="table table-hover">
-        <thead class="thead-dark">
-        <tr>
-            <td><b>ID</b></td>
-            <td><b>Surname</b></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="ticket : ${tickets}">
-            <td th:text="${owner.id}"/>
-            <td th:text="${ticket.surname}"/>
-        </tr>
-        </tbody>
-    </table>
-</div>
+<!--<div class="container">-->
+<!--    <h1>Tickets is here!</h1>-->
+<!--    <span th:if="${owner.size() == 0}">Tickets List is empty</span>-->
+<!--    <table th:if="${owner.size() > 0}" class="table table-hover">-->
+<!--        <thead class="thead-dark">-->
+<!--        <tr>-->
+<!--            <td><b>ID</b></td>-->
+<!--            <td><b>Surname</b></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="ticket : ${tickets}">-->
+<!--            <td th:text="${owner.id}"/>-->
+<!--            <td th:text="${owner.surname}"/>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->
 </body>
 </html>

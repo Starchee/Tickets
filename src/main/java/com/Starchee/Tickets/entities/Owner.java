@@ -11,11 +11,7 @@ public class Owner {
     private Long id;
     @Column(name = "surname")
     private String surname;
-    @Column(name = "name")
-    private String name;
-    @Column(name = "middleName")
-    private String middleName;
-    @Column(name = "carNubmer")
+    @Column(name = "carNumber")
     private String carNumber;
 
     @OneToMany(mappedBy = "owner")
@@ -35,22 +31,6 @@ public class Owner {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
     }
 
     public String getCarNumber() {
@@ -73,10 +53,8 @@ public class Owner {
 
     }
 
-    public Owner(String surname, String name, String middleName, String carNumber, List<Car> cars) {
+    public Owner(String surname, String carNumber, List<Car> cars) {
         this.surname = surname;
-        this.name = name;
-        this.middleName = middleName;
         this.carNumber = carNumber;
         this.cars = cars;
     }
