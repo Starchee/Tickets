@@ -1,6 +1,6 @@
 package com.Starchee.Tickets.services;
 
-import com.Starchee.Tickets.entities.Tickets;
+import com.Starchee.Tickets.entities.Owner;
 import com.Starchee.Tickets.repositories.TicketsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,11 +16,11 @@ public class TicketsService {
         this.ticketsRepository = ticketsRepository;
     }
 
-    public List<Tickets> getAllTickets(){
+    public List<Owner> getAllTickets(){
         return ticketsRepository.findAll();
     }
 
-    public Tickets getTicketsBySurname(String surname){
+    public Owner getTicketsBySurname(String surname){
         return ticketsRepository.findOneBySurname(surname);
     }
 }

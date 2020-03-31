@@ -1,6 +1,6 @@
 package com.Starchee.Tickets.controllers;
 
-import com.Starchee.Tickets.entities.Tickets;
+import com.Starchee.Tickets.entities.Owner;
 import com.Starchee.Tickets.services.TicketsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,14 +25,14 @@ public class TicketsController {
 
     @GetMapping("/search/details")
     public String searchingBySurname(Model model, @RequestParam("surname") String surname) {
-        Tickets selectedTickets = ticketsService.getTicketsBySurname(surname);
-        model.addAttribute("selectedTickets", selectedTickets);
+        Owner selectedOwner = ticketsService.getTicketsBySurname(surname);
+        model.addAttribute("selectedTickets", selectedOwner);
         return "details";
     }
 
     @GetMapping("")
     public String homePage(Model model){
-        List<Tickets> allTickets = ticketsService.getAllTickets();
+        List<Owner> allTickets = ticketsService.getAllTickets();
         model.addAttribute("tickets", allTickets);
         return "homepage";
     }
