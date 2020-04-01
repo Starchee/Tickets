@@ -15,8 +15,32 @@
 <body>
 
 <div class="container">
-    <h1>Details</h1>
-    <span th:text="${selectedOwner.id + ' ' + selectedOwner.surname}" />
+    <div th:replace="~{navigation :: navigation(Home)}" />
+    <h1>Tickets check...</h1>
+    <span th:if="${allTicketsByLastname.size() == 0}">You have no tickets!</span>
+    <table th:if="${allTicketsByLastname.size() > 0}" class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <td><b>ID</b></td>
+            <td><b>Type ticket</b></td>
+            <td><b>Car make</b></td>
+            <td><b>Car model</b></td>
+            <td><b>Car Number</b></td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ticket : ${allTicketsByLastname}">
+            <td th:text="${ticket.id}"/>
+            <td th:text="${ticket.type}"/>
+            <td th:text="${ticket.car.make}"/>
+            <td th:text="${ticket.car.model}"/>
+            <td th:text="${ticket.car.carNumber}"/>
+            <td><a class="btn btn-secondary" th:href="@{'/search/details/catalog'}">Catalog</a></td>
+        </tr>
+
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

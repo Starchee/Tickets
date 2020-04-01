@@ -11,7 +11,7 @@ create table cars (
 
 create table catalog (
     id  bigserial not null,
-    desription varchar(255),
+    description varchar(255),
     price float4,
     type varchar(255),
     primary key (id)
@@ -19,13 +19,12 @@ create table catalog (
 
 create table owners (
     id  bigserial not null,
-    surname varchar(255),
+    lastname varchar(255),
     primary key (id)
     );
 
 create table tickets (
     id  bigserial not null,
-    car_number varchar(255),
     type varchar(255),
     car_id int8,
     catalog_id int8,

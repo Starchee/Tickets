@@ -9,8 +9,8 @@ public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "surname")
-    private String surname;
+    @Column(name = "lastname")
+    private String lastname;
 
     @OneToMany(mappedBy = "owner")
     private List<Car> cars;
@@ -23,12 +23,12 @@ public class Owner {
         this.id = id;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public List<Car> getCars() {
@@ -43,8 +43,8 @@ public class Owner {
 
     }
 
-    public Owner(String surname, List<Car> cars) {
-        this.surname = surname;
+    public Owner(String lastname, List<Car> cars) {
+        this.lastname = lastname;
         this.cars = cars;
     }
 }

@@ -15,11 +15,12 @@
 <body>
 
 <div class="container">
+    <div th:replace="~{navigation :: navigation(Search)}" />
     <h1>Search here</h1>
     <form action="/search/details">
         <div class="row">
             <div class="col">
-                <input type="text" name="surname" class="form-control" placeholder="Surname">
+                <input type="text" name="lastname" class="form-control" placeholder="Surname">
 
             </div>
         </div>

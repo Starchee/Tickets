@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8"/>
 
-    <title>Tickets</title>
+    <title>Webapp</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -15,25 +15,9 @@
 <body>
 
 <div class="container">
-    <h1>Tickets is here!</h1>
-    <span th:if="${owners.size() == 0}">Tickets List is empty</span>
-    <table th:if="${owners.size() > 0}" class="table table-hover">
-        <thead class="thead-dark">
-        <tr>
-            <td><b>ID</b></td>
-            <td><b>Surname</b></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="owner : ${owners}">
-            <td th:text="${owner.id}"/>
-            <td th:text="${owner.surname}"/>
-        </tr>
-        </tbody>
-    </table>
+    <div th:replace="~{navigation :: navigation(Home)}" />
+
+    <h1>WebApp</h1>
 </div>
 </body>
 </html>
