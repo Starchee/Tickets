@@ -30,6 +30,16 @@ create table tickets (
     catalog_id int8,
     primary key (id)
     );
+create table users (
+    username varchar(50) primary key,
+    password varchar(100) not null,
+    enabled boolean not null
+    );
+
+create table authorities (
+    username varchar(50) not null,
+     authority varchar(50) not null
+    );
 
 alter table if exists cars add constraint cars_owner_pk
     foreign key (owner_id) references owners;
@@ -39,3 +49,6 @@ alter table if exists tickets add constraint tickets_cars_pk
 
 alter table if exists tickets add constraint tickets_catalog_pk
     foreign key (catalog_id) references catalog;
+
+alter table if exists authorities add constraint authorities_users_pk
+    foreign key (username) references users;

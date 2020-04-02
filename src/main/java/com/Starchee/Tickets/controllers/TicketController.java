@@ -34,6 +34,12 @@ public class TicketController {
         return "search";
     }
 
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+
     @GetMapping("/search/details")
     public String searchingByLastname(Model model, @RequestParam("lastname") String lastname) {
         List<Ticket> allTicketsByLastname = null;

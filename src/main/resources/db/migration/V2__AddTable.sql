@@ -13,3 +13,6 @@ insert into tickets( type, car_id, catalog_id)
 values ('Speed',1,1), ('Parking',2,2), ('Other',3,3), ('Speed',4,1),('DangerMove',5,4), ('DangerMove',6,4),
        ('Other',7,3);
 
+insert into users (username, password, enabled) values ('admin','{noop}qwerty', true), ('user','{noop}qwerty', true);
+
+insert into authorities (username , authority) values  ('admin', 'ROLE_ADMIN'), ('user', 'ROLE_USER');
