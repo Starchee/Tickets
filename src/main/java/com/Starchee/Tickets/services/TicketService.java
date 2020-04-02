@@ -19,7 +19,8 @@ public class TicketService {
     public List<Ticket> getAllTickets(){
         return ticketRepository.findAll();
     }
+
     public List<Ticket> getAllTicketsByLastname(String lastname){
-        return ticketRepository.findAllTicketBySurname(lastname);
+        return ticketRepository.findAllTicketsBySurname(lastname);
     }
 }

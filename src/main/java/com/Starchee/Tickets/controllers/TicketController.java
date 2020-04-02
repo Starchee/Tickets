@@ -49,6 +49,13 @@ public class TicketController {
         return "catalog";
     }
 
+    @GetMapping("/topFive")
+    public String searchingByLastname(Model model) {
+        List<Catalog> fivePopularTicketsFromCatalog = catalogService.getFivePopularTicketsFromCatalog();
+        model.addAttribute("fivePopularTicketsFromCatalog", fivePopularTicketsFromCatalog);
+        return "topFive";
+    }
+
 
 
     @GetMapping("")

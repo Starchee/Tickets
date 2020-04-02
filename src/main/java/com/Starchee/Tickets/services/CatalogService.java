@@ -19,4 +19,8 @@ public class CatalogService {
     public List<Catalog> getAll(){
         return catalogRepository.findAll();
     }
+
+    public List<Catalog> getFivePopularTicketsFromCatalog(){
+        return catalogRepository.findFivePopularTicketsFromCatalog();
+    }
 }
